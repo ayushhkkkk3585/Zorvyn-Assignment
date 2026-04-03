@@ -778,10 +778,12 @@
 }
 
 /* ─── Responsive ────────────────────────────────────────────────────────────── */
-@media (max-width: 700px) {
-  .hero        { grid-template-columns: 1fr; }
+@media (max-width: 800px) {
+  .hero        { grid-template-columns: 1fr; padding: 24px; }
   .heroDeco    { display: none; }
   .summaryGrid { grid-template-columns: 1fr; }
   .chartsGrid  { grid-template-columns: 1fr; }
-  .insightsBar { grid-template-columns: 1fr; }
+  .insightsBar { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
+  .txSection   { padding: 16px; }
+  .main        { padding: 16px 16px 40px; }
 }
