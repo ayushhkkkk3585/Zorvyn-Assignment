@@ -789,3 +789,119 @@
   .headerInner { flex-direction: column; align-items: flex-start; }
   .roleSwitcher { width: 100%; justify-content: space-between; }
 }
+
+
+@media (max-width: 480px) {
+
+  /* Reduce global spacing */
+  .main {
+    padding: 12px 10px 30px;
+  }
+
+  /* Header fix */
+  .headerInner {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .mastheadTitle {
+    font-size: 20px;
+  }
+
+  /* Hero fix */
+  .hero {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .heroTitle {
+    font-size: 24px;
+    line-height: 1.1;
+  }
+
+  .heroBody {
+    font-size: 14px;
+  }
+
+  /* Summary cards */
+  .summaryCard {
+    padding: 16px 12px;
+  }
+
+  .cardValue {
+    font-size: 22px;
+  }
+
+  /* Charts */
+  .chartCard {
+    padding: 16px 12px;
+  }
+
+  /* Insights */
+  .insightsBar {
+    padding: 16px;
+  }
+
+  .insightVal {
+    font-size: 20px;
+  }
+
+  /* Controls FIX (important) */
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .controls > * {
+    width: 100%;
+  }
+
+  /* Inputs */
+  .sketchInput,
+  .sketchSelect {
+    width: 100%;
+    min-width: unset;
+  }
+
+  /* Buttons */
+  .sketchBtn {
+    width: 100%;
+  }
+
+  /* Table */
+  .table th,
+  .table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  /* Modal */
+  .modal {
+    padding: 20px;
+  }
+
+  /* Footer */
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+.txTableWrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.heroTitle {
+  word-break: break-word;
+}
+
+.roleToggle {
+  width: 100%;
+}
+
+.roleBtn {
+  flex: 1;
+}
