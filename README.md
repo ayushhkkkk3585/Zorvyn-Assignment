@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Finance Dashboard UI - Newsprint Edition
 
-## Getting Started
+Frontend assignment implementation built with Next.js App Router, TypeScript, Tailwind CSS v4, and Recharts.
 
-First, run the development server:
+## Overview
+
+This project implements a single-page finance dashboard with a bold Newsprint visual style and assignment-aligned functionality:
+
+- Dashboard summary cards (balance, income, expenses)
+- Time-based visualization (monthly balance trend)
+- Categorical visualization (expense breakdown by category)
+- Transactions table with filtering, search, and sorting
+- Simulated role-based UI (`viewer` and `admin`)
+- Insights panel with spending observations and monthly comparison
+- Loading, empty, and no-result states
+- Responsive layout behavior across mobile/tablet/desktop
+
+## Stack
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- Recharts
+
+## Running Locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## State Management Approach
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+State is managed in the page-level client component using React hooks:
 
-## Learn More
+- `transactions`: source records loaded via simulated async fetch
+- `role`: `viewer` or `admin` toggle
+- `query`, `typeFilter`, `sortBy`: UI controls for table exploration
+- Derived state via `useMemo` for summary, trend data, categories, filtered table data, and insights
 
-To learn more about Next.js, take a look at the following resources:
+This keeps data flow explicit and easy to reason about for assignment scope.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Mock API Simulation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Transactions are loaded asynchronously with a delayed Promise in `useEffect` to model API behavior and drive loading states.
 
-## Deploy on Vercel
+## Requirement Mapping
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Dashboard Overview
+- Summary cards: total balance, income, expenses
+- Time chart: monthly trend area chart
+- Category chart: pie chart for expense distribution
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. Transactions Section
+- Fields: date, amount, category, type, description
+- Features: search, type filtering, and sorting
+
+3. Basic Role Based UI
+- Role switcher in header
+- `viewer`: read-only
+- `admin`: add transaction button enabled (demo interaction)
+
+4. Insights Section
+- Highest spending category
+- Monthly net comparison insight
+- Current spend-rate indicator
+
+5. State Management
+- React state + memoized selectors for clarity and predictable updates
+
+6. UI and UX Expectations
+- Clean responsive layout
+- High-contrast visual hierarchy
+- Graceful loading, empty, and no-match states
+
+## Design System Notes
+
+The Newsprint design system is implemented through centralized global tokens and utilities in `app/globals.css`:
+
+- Color tokens (off-white paper, ink black, muted greys, editorial red)
+- Typography families for display/body/UI/data
+- Sharp-corner utility (zero radius)
+- Newsprint textures and dot-grid background
+- Flat interaction style with hard offset hover shadows
+
+## Possible Enhancements
+
+- Persist transactions and role in localStorage
+- Add in-table editing modal for admin
+- Add CSV/JSON export
+- Add mock API route handler with pagination

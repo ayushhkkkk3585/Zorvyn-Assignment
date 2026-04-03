@@ -1,26 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=block');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f9f9f7;
+  --foreground: #111111;
+  --muted: #e5e5e0;
+  --accent: #cc0000;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #e5e5e5;
+  --neutral-400: #a3a3a3;
+  --neutral-500: #737373;
+  --neutral-600: #525252;
+  --neutral-700: #404040;
+  --font-serif-display: 'Playfair Display', 'Times New Roman', serif;
+  --font-body-custom: 'Lora', Georgia, serif;
+  --font-sans-custom: 'Inter', 'Helvetica Neue', sans-serif;
+  --font-mono-custom: 'JetBrains Mono', 'Courier New', monospace;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --font-serif-display: var(--font-serif-display);
+  --font-body: var(--font-body-custom);
+  --font-sans: var(--font-sans-custom);
+  --font-mono: var(--font-mono-custom);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body-custom);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23111111' fill-opacity='0.04' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }
+
+.font-serif-display {
+  font-family: var(--font-serif-display);
+}
+
+.font-body {
+  font-family: var(--font-body-custom);
+}
+
+.font-sans {
+  font-family: var(--font-sans-custom);
+}
+
+.font-mono {
+  font-family: var(--font-mono-custom);
+}
+
+/* .sharp-corners,
+.sharp-corners * {
+  border-radius: 0 !important;
+}
+
+.hard-shadow-hover {
+  transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+}
+
+.hard-shadow-hover:hover {
+  box-shadow: 4px 4px 0 0 #111111;
+  transform: translate(-2px, -2px);
+}
+
+.newsprint-texture {
+  position: relative;
+}
+
+.newsprint-texture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(0deg, transparent 98%, rgba(0, 0, 0, 0.02) 100%),
+    linear-gradient(90deg, transparent 98%, rgba(0, 0, 0, 0.02) 100%);
+  background-size: 3px 3px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.newsprint-texture > * {
+  position: relative;
+  z-index: 1;
+} */
