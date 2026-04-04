@@ -1579,7 +1579,7 @@ export default function FinanceLedgerPage() {
         )}
       </header>
 
-      <main className="main-wrap" style={{ maxWidth: 1100, margin: "0 auto", padding: "28px 20px 60px" }}>
+      <main className="main-wrap" style={{ width:"100%", margin: "0 auto", padding: "28px 20px 60px" }}>
 
         {/* ── Hero ──────────────────────────────────────── */}
         <section
